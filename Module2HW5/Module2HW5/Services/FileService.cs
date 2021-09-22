@@ -14,24 +14,7 @@ namespace Module2HW5.Services
     {
         public void SaveInFile(string path, string name, string text)
         {
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-                File.WriteAllText($"{path}{name}", text);
-            }
-            else
-            {
-                File.WriteAllText($"{path}{name}", text);
-                string[] files = Directory.GetFiles(path);
-                if (files.Length > 3)
-                {
-                    Array.Sort(files);
-                    for (var i = 0; i < files.Length - 3; i++)
-                    {
-                        File.Delete(files[i]);
-                    }
-                }
-            }
+            File.WriteAllText($"{path}{name}", text);
         }
     }
 }

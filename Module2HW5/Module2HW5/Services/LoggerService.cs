@@ -25,14 +25,14 @@ namespace Module2HW5.Services
 
         public void Write(LogType logType, string message)
         {
-            string log = $"{DateTime.Now.ToString(_configProvider.Init().Logger.TimeFormat)}: {logType}: {message}";
+            var log = $"{DateTime.Now.ToString(_configProvider.Init().Logger.TimeFormat)}: {logType}: {message}";
             Console.WriteLine(log);
             _loggerProvider.Log.AppendLine(log);
         }
 
         public void Write(LogType logType, string message, Exception exception)
         {
-            string log = $"{DateTime.Now.ToString(_configProvider.Init().Logger.TimeFormat)}: {logType}: {message} {exception}";
+            var log = $"{DateTime.Now.ToString(_configProvider.Init().Logger.TimeFormat)}: {logType}: {message} {exception}";
             Console.WriteLine(log);
             _loggerProvider.Log.AppendLine(log);
         }
